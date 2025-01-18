@@ -1,8 +1,8 @@
-# Tasks API
+# Tasks Framework
 
 ## About
 
-Tasks & questing API for [Luanti (Minetest)](https://luanti.org/). Inspired by
+Tasks & questing framework for [Luanti (Minetest)](https://luanti.org/). Inspired by
 [Stendhal's](https://stendhalgame.org/) quest API.
 
 ___WARNING:__ This mod is incomplete & not ready for production servers. Use at your own risk._
@@ -15,5 +15,5 @@ __Required:__
 
 ## Links
 
-- [![Codeberg](https://img.shields.io/static/v1?logo=codeberg&label=Codeberg&message=AntumLuanti/mod-tasks_api&color=%23375a7f)](https://codeberg.org/AntumLuanti/mod-tasks_api)
-- [![GitHub](https://img.shields.io/static/v1?logo=github&label=GitHub&message=AntumMT/mod-tasks_api&color=%23375a7f)](https://github.com/AntumMT/mod-tasks_api)
+- [![Codeberg](https://img.shields.io/static/v1?logo=codeberg&label=Codeberg&message=AntumLuanti/mod-tasks&color=%23375a7f)](https://codeberg.org/AntumLuanti/mod-tasks)
+- [![GitHub](https://img.shields.io/static/v1?logo=github&label=GitHub&message=AntumMT/mod-tasks&color=%23375a7f)](https://github.com/AntumMT/mod-tasks)
