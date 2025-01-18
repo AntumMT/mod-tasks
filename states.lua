@@ -114,7 +114,7 @@ function tasks.set_player_state(player, id, index, value)
 	local task_def = tasks.get_definition(id)
 	if task_def == nil then
 		log_warn("`tasks.set_state`: unregistered ID \"" .. id .. "\"")
-	else
+	elseif tasks.player_is_complete(player, id) then
 		task_def:on_complete(player)
 	end
 end
