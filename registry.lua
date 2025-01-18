@@ -28,15 +28,6 @@ function tasks.register(id, TaskDef)
 		log_error("`TaskDef.title` must be a string")
 	end
 
-	if TaskDef.logic == nil then
-		log_error("`TaskDef.logic` function not defined")
-		return
-	end
-	if type(TaskDef.logic) ~= "function" then
-		log_error("`TaskDef.logic` must be a function")
-		return
-	end
-
 	TaskDef.is_complete = TaskDef.is_complete or function(self, player)
 		return tasks.get_player_state(player, id, 1) == "done"
 	end
@@ -61,11 +52,22 @@ function tasks.register(id, TaskDef)
 		return
 	end
 
-	registry[id] = TaskDef
+	if TaskDef.logic ~= nil && type(TaskDef.logic) ~= "function" then
+		log_error("`TaskDef.logic` must be a function")
+		return
+	end
+	if TaskDef.logic then
+		-- start logic loop
+		core.register_globalstep(function(dtime)
+			for _, player in pairs(core.get_connected_players()) do
+				if tasks.player_has(player, id) then
+					TaskDef:logic(dtime, player)
+				end
+			end
+		end)
+	end
 
-	core.register_on_mods_loaded(function()
-		TaskDef:logic()
-	end)
+	registry[id] = TaskDef
 end
 
 --- Retrieves a task definition.
@@ -100,8 +102,6 @@ end
 --  @table TaskDef
 --  @field title
 --    Text to be used as header for displaying to player.
---  @field logic
---    Function with task logic instructions for completing (may be removed). See @{TaskDef:logic}.
 --  @field is_complete
 --    _(optional)_ Function to check if player has completed task. See @{TaskDef:is_complete}.
 --  @field on_complete
@@ -110,10 +110,9 @@ end
 --  @field get_log
 --    _(optional)_ Function to retrieve task steps descriptions for displaying to player. See
 --    @{TaskDef:get_log}.
-
---- Function with task logic instructions for completing (may be removed).
---
---  @function TaskDef:logic
+--  @field logic
+--    _(optional)_ Function with task logic instructions called every server step. See
+--    @{TaskDef:logic}.
 
 --- Function to check if player has completed task.
 --
@@ -139,3 +138,11 @@ end
 --    Player reference.
 --  @treturn table
 --    Task progress as list of descriptions.
+
+--- Function with task logic instructions called every server step.
+--
+--  @function TaskDef:logic
+--  @tparam int dtime
+--    Time since last execution in seconds.
+--  @tparam PlayerObjectRef player
+--    Player object reference.
