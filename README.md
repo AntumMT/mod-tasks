@@ -2,7 +2,8 @@
 
 ## About
 
-Tasks & questing API for [Luanti (Minetest)](https://luanti.org/).
+Tasks & questing API for [Luanti (Minetest)](https://luanti.org/). Inspired by
+[Stendhal's](https://stendhalgame.org/) quest API.
 
 ___WARNING:__ This mod is incomplete & not ready for production servers. Use at your own risk._
 
