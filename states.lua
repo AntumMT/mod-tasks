@@ -96,7 +96,7 @@ function tasks.set_player_state(player, id, index, value)
 	local state_string = player_tasks[id]
 	if index > 0 then
 		-- update a single index
-		local state_table = deserialize(state_string)
+		local state_table = deserialize(state_string or "")
 		state_table[index] = value
 		state_string = serialize(state_table)
 	else
