@@ -1,0 +1,11 @@
+{
+	"type": "MOD",
+	"title": "Tasks Framework",
+	"name": "tasks",
+	"short_description": "Framework for adding tasks & quests.",
+	"dev_state": "WIP",
+	"license": "MIT",
+	"tags": ["library", "developer_tools"],
+	"repo": "https://codeberg.org/AntumLuanti/mod-tasks",
+	"issue_tracker": "https://codeberg.org/AntumLuanti/mod-tasks/issues"
+}
