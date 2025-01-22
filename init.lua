@@ -7,15 +7,16 @@ dofile(tasks.path .. "/states.lua")
 dofile(tasks.path .. "/registry.lua")
 dofile(tasks.path .. "/test.lua")
 
+-- DEBUG:
 core.register_on_joinplayer(function(player, last_login)
-	-- populate player's tasks from storage
-	local all_data = wdata.read("player_tasks") or {}
-	local player_tasks = all_data[player:get_player_name()]
-	if player_tasks ~= nil then
-		player:get_meta():set_string("tasks", core.serialize(player_tasks))
+	local pmeta = player:get_meta()
+	local player_tasks = core.deserialize(pmeta:get_string("tasks"))
+	if player_tasks == nil then
+		core.log("player " .. player:get_player_name() .. " doesn't have tasks")
+	else
+		core.log("player " .. player:get_player_name() .. " already has tasks")
 	end
 
-	-- DEBUG:
 	core.log("tasks for player " .. player:get_player_name() .. ": " .. tostring(player:get_meta():get_string("tasks")))
 	tasks.set_player_state(player, "foo", "started")
 	tasks.set_player_state(player, "bar", "done")

@@ -106,11 +106,6 @@ function tasks.set_player_state(player, id, index, value)
 	player_tasks[id] = state_string
 	player:get_meta():set_string("tasks", core.serialize(player_tasks))
 
-	-- write to disk
-	local all_data = wdata.read("player_tasks") or {}
-	all_data[player:get_player_name()] = player_tasks
-	wdata.write("player_tasks", all_data)
-
 	local task_def = tasks.get_definition(id)
 	if task_def == nil then
 		log_warn("`tasks.set_state`: unregistered ID \"" .. id .. "\"")
