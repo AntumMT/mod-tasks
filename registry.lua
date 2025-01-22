@@ -52,7 +52,7 @@ function tasks.register(id, TaskDef)
 		return
 	end
 
-	if TaskDef.logic ~= nil && type(TaskDef.logic) ~= "function" then
+	if TaskDef.logic ~= nil and type(TaskDef.logic) ~= "function" then
 		log_error("`TaskDef.logic` must be a function")
 		return
 	end
