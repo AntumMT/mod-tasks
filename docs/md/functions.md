@@ -91,8 +91,8 @@ __Parameters:__
 - __id:__ (string) Task identifier.
 - __index:__ (int) (optional) Task state index to be updated. If `nil` or less than 1 then entire
   state string is updated.
-- __value:__ (string) (optional) New value for state index or entire state string. If `nil` then
-  index is set to empty string or entire state is unset.
+- __value:__ (any) (optional) New value (converted to string) for state index or entire state
+  string. If `nil` then index is set to empty string or entire state is unset.
 
 
 ## tasks.get_player_state
