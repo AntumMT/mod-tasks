@@ -145,6 +145,23 @@ __Parameters:__
 __Returns:__ (boolean) `true` if task definition considers task completed by player.
 
 
+## tasks.get_player_log
+
+`tasks.get_player_log(player, id)`
+
+__Description:__
+
+> Retrieves task descriptors for displaying to player. Wrapper for [TaskDef:get_log].
+
+__Parameters:__
+
+- __player:__ ([ObjectRef]) Player reference.
+- __id:__ (string) Task identifier.
+
+__Returns:__ (table) List of string descriptors.
+
+
 [ObjectRef]: https://api.luanti.org/class-reference/#objectref
 [TaskDef]: tables.md#taskdef
+[TaskDef:get_log]: tables.md#taskdefget_log
 [TaskDef:is_complete]: tables.md#taskdefis_complete

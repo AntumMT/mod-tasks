@@ -86,3 +86,12 @@ function tasks.player_is_complete(player, id)
 	end
 	return task_def:is_complete(player)
 end
+
+function tasks.get_player_log(player, id)
+	local task_def = tasks.get_definition(id)
+	if task_def == nil then
+		log_warn("`tasks.get_player_log`: unregistered ID " .. id)
+		return false
+	end
+	return task_def:get_log(player) or {}
+end
