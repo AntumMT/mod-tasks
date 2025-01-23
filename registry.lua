@@ -13,6 +13,8 @@ function tasks.register(id, TaskDef)
 		return
 	end
 
+	TaskDef.id = id
+
 	if TaskDef.title == nil then
 		log_error("`TaskDef.title` not defined")
 		return
