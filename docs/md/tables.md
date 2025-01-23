@@ -10,6 +10,7 @@ Task definition table.
 __Fields:__
 
 - __title:__ (string) Human readable name of task.
+- __description:__ (string) Description of task.
 - __is_complete:__ ([function](#taskdefis_complete)) (optional) Checks if player has completed task.
 - __on_complete:__ ([function](#taskdefon_complete)) (optional) Called to execute instructions
   when state is considered complete after call to _[tasks.set_state]_.

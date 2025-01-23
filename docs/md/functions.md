@@ -45,6 +45,21 @@ __Parameters:__
 __Returns:__ Task title `string` or `nil` if `id` not registered.
 
 
+## tasks.get_description
+
+`tasks.get_description(id)`
+
+__Description:__
+
+> Retrieves task description.
+
+__Parameters:__
+
+- __id:__ (string) Task identifier.
+
+__Returns:__ Task description `string` or `nil` if `id` not registered.
+
+
 # Player States
 
 ## tasks.get_player_tasks

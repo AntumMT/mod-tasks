@@ -22,6 +22,15 @@ function tasks.register(id, TaskDef)
 		return
 	end
 
+	if TaskDef.description == nil then
+		log_error("`TaskDef.description` not defined")
+		return
+	end
+	if type(TaskDef.description) ~= "string" then
+		log_error("`TaskDef.description` must be a string")
+		return
+	end
+
 	TaskDef.is_complete = TaskDef.is_complete or function(self, player)
 		return tasks.get_player_state(player, id, 1) == "done"
 	end
@@ -75,4 +84,13 @@ function tasks.get_title(id)
 		return
 	end
 	return task_def.title
+end
+
+function tasks.get_description(id)
+	local task_def = registry[id]
+	if task_def == nil then
+		log_warn("`tasks.get_description`: unregistered ID \"" .. id .. "\"")
+		return
+	end
+	return task_def.description
 end
