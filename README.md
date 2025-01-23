@@ -13,6 +13,7 @@ _none_
 
 ## Links
 
+- [API reference](https://antumluanti.codeberg.page/mod-tasks/)
 - [![Codeberg](https://img.shields.io/static/v1?logo=codeberg&label=Codeberg&message=AntumLuanti/mod-tasks&color=%23375a7f)](https://codeberg.org/AntumLuanti/mod-tasks)
 - [![GitHub](https://img.shields.io/static/v1?logo=github&label=GitHub&message=AntumMT/mod-tasks&color=%23375a7f)](https://github.com/AntumMT/mod-tasks)
 - [![Forum](https://img.shields.io/static/v1?logo=minetest&label=Forum&message=tasks&color=%23375a7f)](https://forum.luanti.org/viewtopic.php?t=31304)
