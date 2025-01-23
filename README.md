@@ -9,9 +9,7 @@ ___WARNING:__ This mod is incomplete & not ready for production servers. Use at 
 
 ## Dependencies
 
-__Required:__
-
-- [![wdata](https://img.shields.io/static/v1?logo=minetest&label=ContentDB&message=wdata&color=%23375a7f)](https://content.luanti.org/packages/AntumDeluge/wdata/)
+_none_
 
 ## Links
 
