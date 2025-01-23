@@ -49,7 +49,7 @@ function tasks.set_player_state(player, id, index, value)
 		index = 0
 	end
 	if value ~= nil then
-		value = value:trim()
+		value = tostring(value):trim()
 	end
 	if index > 0 and value == nil then
 		-- use empty string to preserve indexes
