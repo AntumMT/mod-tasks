@@ -84,7 +84,7 @@ function tasks.player_is_complete(player, id)
 		log_warn("`tasks.player_is_complete`: unregistered ID " .. id)
 		return false
 	end
-	return task_def:is_complete(player)
+	return task_def:is_complete(player) or false
 end
 
 function tasks.get_player_log(player, id)
