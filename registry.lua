@@ -75,6 +75,14 @@ function tasks.register(id, TaskDef)
 	registry[id] = TaskDef
 end
 
+function tasks.get_registered()
+	local ids = {}
+	for id, def in pairs(registry) do
+		table.insert(ids, id)
+	end
+	return ids
+end
+
 function tasks.get_definition(id)
 	return registry[id]
 end

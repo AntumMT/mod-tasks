@@ -15,6 +15,17 @@ __Parameters:__
 - __def:__ ([TaskDef]) Task definition table.
 
 
+## tasks.get_registered
+
+`tasks.get_registered`
+
+__Description:__
+
+> Retrieves list of registered task IDs.
+
+__Returns:__ (table) Registered task IDs.
+
+
 ## tasks.get_definition
 
 `tasks.get_definition(id)`
