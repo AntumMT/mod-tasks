@@ -91,6 +91,10 @@ function tasks.set_player_state(player, id, index, value)
 	if value ~= nil then
 		value = value:trim()
 	end
+	if index > 0 and value == nil then
+		-- use empty string to preserve indexes
+		value = ""
+	end
 
 	local player_tasks = tasks.get_player_tasks(player)
 	local state_string = player_tasks[id]
