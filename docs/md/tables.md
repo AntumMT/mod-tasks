@@ -71,7 +71,7 @@ __Returns:__ List of state descriptors.
 
 __Description:__
 
-Called at every server step. ___Should NOT be called manually.___
+> Called at every server step. ___Should NOT be called manually.___
 
 
 [ObjectRef]: https://api.luanti.org/class-reference/#objectref
