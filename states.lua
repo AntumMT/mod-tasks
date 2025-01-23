@@ -3,7 +3,7 @@ log_error, log_warn = dofile(tasks.path .. "/helper_functions.lua")
 
 local function serialize(state_table)
 	local state_string = ""
-	for _, s in ipairs(t) do
+	for _, s in ipairs(state_table) do
 		if #state_string > 0 then
 			state_string = state_string .. ";"
 		end
