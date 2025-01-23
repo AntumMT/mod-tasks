@@ -7,6 +7,7 @@ Framework for adding tasks & quests to [Luanti (Minetest)](https://luanti.org/).
 
 - [Functions](functions.md)
 - [Tables](tables.md)
+- [Usage Examples](examples.md)
 
 ## Links
 
