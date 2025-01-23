@@ -1,0 +1,10 @@
+
+site_name: Tasks Framework
+site_description: Framework for adding tasks & quests.
+site_url: https://content.luanti.org/packages/AntumDeluge/tasks/
+docs_dir: docs/md
+site_dir: docs/html
+nav:
+  - Home: index.md
+  - Functions: functions.md
+  - Tables: tables.md
