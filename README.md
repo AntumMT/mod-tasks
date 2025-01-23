@@ -5,7 +5,7 @@
 Tasks & questing framework for [Luanti (Minetest)](https://luanti.org/). Inspired by
 [Stendhal's](https://stendhalgame.org/) quest API.
 
-___WARNING:__ This mod is incomplete & not ready for production servers. Use at your own risk._
+___WARNING:__ This mod is highly experimental & not recommended for production servers._
 
 ## Dependencies
 
