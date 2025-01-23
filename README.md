@@ -5,11 +5,20 @@
 Tasks & questing framework for [Luanti (Minetest)](https://luanti.org/). Inspired by
 [Stendhal's](https://stendhalgame.org/) quest API.
 
-___WARNING:__ This mod is highly experimental & not recommended for production servers._
+___WARNING:__ This mod is in early development & may not be suitable for production servers._
+
+Similar to [TeTpaAka's Quest Framework](https://forum.luanti.org/viewtopic.php?t=11265), this mod aims to be a library for adding quests & tasks to games. It is meant to be a minimalist library, so does not include any formspec interfaces. Mods must create their own which can be populated using the functions:
+
+- `tasks.get_registered()`: Returns list of all registered task IDs.
+- `tasks.get_title(id)`: Returns task title string.
+- `tasks.get_description(id)`: Returns task description string.
+- `tasks.get_player_log(player, id)`: Returns list of task string descriptors for player's state.
+
 
 ## Dependencies
 
 _none_
+
 
 ## Links
 
