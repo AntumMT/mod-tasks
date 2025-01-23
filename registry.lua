@@ -65,7 +65,7 @@ function tasks.register(id, TaskDef)
 		-- start logic loop
 		core.register_globalstep(function(dtime)
 			for _, player in pairs(core.get_connected_players()) do
-				if tasks.player_has(player, id) then
+				if tasks.player_has(player, id) and not TaskDef:is_complete(player) then
 					TaskDef:logic(dtime, player)
 				end
 			end
