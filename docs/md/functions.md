@@ -120,7 +120,7 @@ __Returns:__ (boolean) `true` if `id` is found in player tasks.
 
 __Description:__
 
-> Checks if task state is considered complete.
+> Checks if task state is considered complete. Wrapper for [TaskDef:is_complete].
 
 __Parameters:__
 
@@ -132,3 +132,4 @@ __Returns:__ (boolean) `true` if task definition considers task completed by pla
 
 [ObjectRef]: https://api.luanti.org/class-reference/#objectref
 [TaskDef]: tables.md#taskdef
+[TaskDef:is_complete]: tables.md#taskdefis_complete
