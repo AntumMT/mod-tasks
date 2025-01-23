@@ -3,13 +3,6 @@ log_error, log_warn = dofile(tasks.path .. "/helper_functions.lua")
 
 local registry = {}
 
---- Registers a task.
---
---  @function tasks.register
---  @tparam string id
---    Task identifier.
---  @tparam table TaskDef
---    Task definition table. See @{TaskDef}.
 function tasks.register(id, TaskDef)
 	if not id then
 		log_error("invalid task ID")
@@ -70,23 +63,10 @@ function tasks.register(id, TaskDef)
 	registry[id] = TaskDef
 end
 
---- Retrieves a task definition.
---
---  @tparam string id
---    Task identifier.
---  @return
---    @{TaskDef} table or `nil` if `id` not registered.
 function tasks.get_definition(id)
 	return registry[id]
 end
 
---- Retrieves human readable title.
---
---  @function tasks.get_title
---  @tparam string id
---    Task identifier.
---  @return
---    Task title `string` or `nil` if `id` not registered.
 function tasks.get_title(id)
 	local task_def = registry[id]
 	if task_def == nil then
@@ -95,54 +75,3 @@ function tasks.get_title(id)
 	end
 	return task_def.title
 end
-
-
---- Task definition.
---
---  @table TaskDef
---  @field title
---    Text to be used as header for displaying to player.
---  @field is_complete
---    _(optional)_ Function to check if player has completed task. See @{TaskDef:is_complete}.
---  @field on_complete
---    _(optional)_ Function to execute instructions when state is considered complete after call to
---    @{tasks.set_state}. See @{TaskDef:on_complete}.
---  @field get_log
---    _(optional)_ Function to retrieve task steps descriptions for displaying to player. See
---    @{TaskDef:get_log}.
---  @field logic
---    _(optional)_ Function with task logic instructions called every server step. See
---    @{TaskDef:logic}.
-
---- Function to check if player has completed task.
---
---  The default is to check if the value of the first task index is "done".
---
---  @function TaskDef:is_complete
---  @param player
---    Player object reference.
---  @treturn boolean
---    `true` if the task is in a state which is considered to have been completed.
-
---- Function to execute instructions when state is considered complete after call to
---  @{tasks.set_state}.
---
---  @function TaskDef:on_complete
---  @tparam PlayerObjectRef player
---    Player reference.
-
---- Function to retrieve task steps descriptions for displaying to player.
---
---  @function TaskDef:get_log
---  @tparam PlayerObjectRef player
---    Player reference.
---  @treturn table
---    Task progress as list of descriptions.
-
---- Function with task logic instructions called every server step.
---
---  @function TaskDef:logic
---  @tparam int dtime
---    Time since last execution in seconds.
---  @tparam PlayerObjectRef player
---    Player object reference.
