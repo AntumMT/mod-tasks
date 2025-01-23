@@ -13,6 +13,7 @@ _none_
 
 ## Links
 
+- [![ContentDB](https://content.luanti.org/packages/AntumDeluge/tasks/shields/title/)](https://content.luanti.org/packages/AntumDeluge/tasks/)
 - [API reference](https://antumluanti.codeberg.page/mod-tasks/) ([mirror](https://antummt.github.io/mod-tasks/))
 - [![Codeberg](https://img.shields.io/static/v1?logo=codeberg&label=Codeberg&message=AntumLuanti/mod-tasks&color=%23375a7f)](https://codeberg.org/AntumLuanti/mod-tasks)
 - [![GitHub](https://img.shields.io/static/v1?logo=github&label=GitHub&message=AntumMT/mod-tasks&color=%23375a7f)](https://github.com/AntumMT/mod-tasks)
