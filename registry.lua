@@ -19,6 +19,7 @@ function tasks.register(id, TaskDef)
 	end
 	if type(TaskDef.title) ~= "string" then
 		log_error("`TaskDef.title` must be a string")
+		return
 	end
 
 	TaskDef.is_complete = TaskDef.is_complete or function(self, player)
