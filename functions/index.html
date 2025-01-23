@@ -39,6 +39,9 @@
                             <li class="navitem">
                                 <a href="../tables/" class="nav-link">Tables</a>
                             </li>
+                            <li class="navitem">
+                                <a href="../examples/" class="nav-link">Examples</a>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -89,6 +92,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#tasksget_description" class="nav-link">tasks.get_description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             
@@ -111,6 +118,10 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#tasksplayer_is_complete" class="nav-link">tasks.player_is_complete</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tasksget_player_log" class="nav-link">tasks.get_player_log</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -155,6 +166,17 @@
 <li><strong>id:</strong> (string) Task identifier.</li>
 </ul>
 <p><strong>Returns:</strong> Task title <code>string</code> or <code>nil</code> if <code>id</code> not registered.</p>
+<h2 id="tasksget_description">tasks.get_description</h2>
+<p><code>tasks.get_description(id)</code></p>
+<p><strong>Description:</strong></p>
+<blockquote>
+<p>Retrieves task description.</p>
+</blockquote>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong>id:</strong> (string) Task identifier.</li>
+</ul>
+<p><strong>Returns:</strong> Task description <code>string</code> or <code>nil</code> if <code>id</code> not registered.</p>
 <h1 id="player-states">Player States</h1>
 <h2 id="tasksget_player_tasks">tasks.get_player_tasks</h2>
 <p><code>tasks.get_player_tasks(player)</code></p>
@@ -179,11 +201,11 @@
 <li><strong>id:</strong> (string) Task identifier.</li>
 <li><strong>index:</strong> (int) (optional) Task state index to be updated. If <code>nil</code> or less than 1 then entire
   state string is updated.</li>
-<li><strong>value:</strong> (string) (optional) New value for state index or entire state string. If <code>nil</code> then
-  index is set to empty string or entire state is unset.</li>
+<li><strong>value:</strong> (any) (optional) New value (converted to string) for state index or entire state
+  string. If <code>nil</code> then index is set to empty string or entire state is unset.</li>
 </ul>
 <h2 id="tasksget_player_state">tasks.get_player_state</h2>
-<p><code>tasks.get_player_state(player, id[, index])</code></p>
+<p><code>tasks.get_player_state(player, id[, index|list])</code></p>
 <p><strong>Description:</strong></p>
 <blockquote>
 <p>Retrieves task state string from player meta info.</p>
@@ -193,9 +215,10 @@
 <li><strong>player:</strong> (<a href="https://api.luanti.org/class-reference/#objectref">ObjectRef</a>) Player reference.</li>
 <li><strong>id:</strong> (string) Task identifier.</li>
 <li><strong>index:</strong> (int) (optional) Task state index.</li>
+<li><strong>list:</strong> (boolean) (optional) Flag to return list instead of string for entire state.</li>
 </ul>
-<p><strong>Returns:</strong> (string) String value of state index or entire state string if <code>index</code> is <code>nil</code> or
-  less than 1.</p>
+<p><strong>Returns:</strong> (string|table) String value of state index or entire state string if <code>index</code> is <code>nil</code>
+  or less than 1. If <code>table</code> is <code>true</code> then a list of strings of entire state is returned.</p>
 <h2 id="tasksplayer_has">tasks.player_has</h2>
 <p><code>tasks.player_has(player, id)</code></p>
 <p><strong>Description:</strong></p>
@@ -219,7 +242,19 @@
 <li><strong>player:</strong> (<a href="https://api.luanti.org/class-reference/#objectref">ObjectRef</a>) Player reference.</li>
 <li><strong>id:</strong> (string) Task identifier.</li>
 </ul>
-<p><strong>Returns:</strong> (boolean) <code>true</code> if task definition considers task completed by player.</p></div>
+<p><strong>Returns:</strong> (boolean) <code>true</code> if task definition considers task completed by player.</p>
+<h2 id="tasksget_player_log">tasks.get_player_log</h2>
+<p><code>tasks.get_player_log(player, id)</code></p>
+<p><strong>Description:</strong></p>
+<blockquote>
+<p>Retrieves task descriptors for displaying to player. Wrapper for <a href="../tables/#taskdefget_log">TaskDef:get_log</a>.</p>
+</blockquote>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong>player:</strong> (<a href="https://api.luanti.org/class-reference/#objectref">ObjectRef</a>) Player reference.</li>
+<li><strong>id:</strong> (string) Task identifier.</li>
+</ul>
+<p><strong>Returns:</strong> (table) List of string descriptors.</p></div>
             </div>
         </div>
 
