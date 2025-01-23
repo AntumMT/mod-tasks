@@ -67,11 +67,16 @@ __Returns:__ List of state descriptors.
 
 ## TaskDef:logic
 
-`TaskDef:logic()`
+`TaskDef:logic(dtime, player)`
 
 __Description:__
 
 > Called at every server step. ___Should NOT be called manually.___
+
+__Parameters:__
+
+- __dtime:__ (int) Elapsed time since last call in seconds.
+- __player:__ ([ObjectRef]) Player reference.
 
 
 [ObjectRef]: https://api.luanti.org/class-reference/#objectref
