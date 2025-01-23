@@ -25,9 +25,10 @@ function tasks.get_player_tasks(player)
 end
 
 function tasks.get_player_state(player, id, index)
-	if index == nil then
+	if type(index) ~= "number" then
 		index = 0
 	end
+	local list = index == true
 
 	local player_tasks = tasks.get_player_tasks(player)
 	local state_string = player_tasks[id]
@@ -36,6 +37,9 @@ function tasks.get_player_state(player, id, index)
 		return deserialize(state_string)[index]
 	end
 	-- return value of all indexes
+	if list then
+		return deserialize(state_string)
+	end
 	return state_string
 end
 

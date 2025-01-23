@@ -97,7 +97,7 @@ __Parameters:__
 
 ## tasks.get_player_state
 
-`tasks.get_player_state(player, id[, index])`
+`tasks.get_player_state(player, id[, index|list])`
 
 __Description:__
 
@@ -108,9 +108,10 @@ __Parameters:__
 - __player:__ ([ObjectRef]) Player reference.
 - __id:__ (string) Task identifier.
 - __index:__ (int) (optional) Task state index.
+- __list:__ (boolean) (optional) Flag to return list instead of string for entire state.
 
-__Returns:__ (string) String value of state index or entire state string if `index` is `nil` or
-  less than 1.
+__Returns:__ (string|table) String value of state index or entire state string if `index` is `nil`
+  or less than 1. If `table` is `true` then a list of strings of entire state is returned.
 
 
 ## tasks.player_has
